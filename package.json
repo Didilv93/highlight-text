@@ -2,7 +2,7 @@
   "name": "highlight-text",
   "version": "1.0.0",
   "description": "",
-  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[D\u001b[t",
+  "main": "index.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage"
@@ -12,7 +12,8 @@
     "url": "git+https://github.com/Didilv93/highlight-text.git"
   },
   "keywords": [
-    "\u0016highlight-text\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[D\u001b["
+    "highlight",
+    "text"
   ],
   "author": "Diego Silva",
   "license": "MIT",
