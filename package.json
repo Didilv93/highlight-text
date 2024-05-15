@@ -1,0 +1,32 @@
+{
+  "name": "highlight-text",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[D\u001b[t",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Didilv93/highlight-text.git"
+  },
+  "keywords": [
+    "\u0016highlight-text\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[D\u001b["
+  ],
+  "author": "Diego Silva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Didilv93/highlight-text/issues"
+  },
+  "homepage": "https://github.com/Didilv93/highlight-text#readme",
+  "devDependencies": {
+    "@types/react": "^18.3.2",
+    "mini-css-extract-plugin": "^2.9.0",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "styled-components": "^6.1.11"
+  }
+}
