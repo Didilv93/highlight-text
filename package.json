@@ -1,5 +1,5 @@
 {
-  "name": "highlight-text",
+  "name": "@dspackages/highlight-text",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
