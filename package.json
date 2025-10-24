@@ -1,10 +1,19 @@
 {
   "name": "@dspackages/highlight-text",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.ts",
+  "description": "A React component for highlighting text matches with customizable styling",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.cjs.json && npm run build:css",
+    "build:css": "powershell -Command \"Copy-Item src/index.css dist/index.css\"",
+    "prepublishOnly": "npm run build",
     "test": "jest --coverage"
   },
   "repository": {
@@ -12,8 +21,12 @@
     "url": "git+https://github.com/Didilv93/highlight-text.git"
   },
   "keywords": [
+    "react",
     "highlight",
-    "text"
+    "text",
+    "search",
+    "component",
+    "typescript"
   ],
   "author": "Diego Silva",
   "license": "MIT",
@@ -21,13 +34,16 @@
     "url": "https://github.com/Didilv93/highlight-text/issues"
   },
   "homepage": "https://github.com/Didilv93/highlight-text#readme",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
   "devDependencies": {
     "@types/react": "^18.3.2",
-    "mini-css-extract-plugin": "^2.9.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "typescript": "^5.4.5"
   },
-  "dependencies": {
-    "react": "^18.3.1",
-    "styled-components": "^6.1.11"
-  }
+  "dependencies": {},
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

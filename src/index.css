@@ -1,8 +1,9 @@
-.span {
+.highlight-text-container {
     display: contents;
-    .highlight {
-        background-color: #FFC70A;
-        color: #000000;
-        font-weight: bold;
-    }
+}
+
+.highlight-text-container .highlight {
+    background-color: #FFC70A;
+    color: #000000;
+    font-weight: bold;
 }

@@ -17,6 +17,6 @@
     "jsx": "react-jsx",
     "declaration": true,
     "outDir": "dist",
-    "module": "esnext"
+    "module": "commonjs"
   }
 }

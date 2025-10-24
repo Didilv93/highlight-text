@@ -3,6 +3,11 @@ import './index.css';
 export type TProps = {
     text: string;
     search: string;
+    caseSensitive?: boolean;
+    className?: string;
+    highlightClassName?: string;
 };
-declare const _default: ({ text, search }: TProps) => React.JSX.Element;
-export default _default;
+declare const HighlightText: ({ text, search, caseSensitive, className, highlightClassName }: TProps) => React.DetailedReactHTMLElement<{
+    className: string;
+}, HTMLElement>;
+export default HighlightText;
