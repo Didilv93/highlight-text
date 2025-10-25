@@ -8,6 +8,11 @@
 - **Multiple styling options** - Choose between CSS classes or inline props
 - **Enhanced TypeScript support** - Complete typing for style options
 
+### **Improved**
+- **Better layout preservation** - Changed from `<span>` to `<mark>` elements for highlighting
+- **Enhanced CSS reset** - Added comprehensive inline styles to prevent layout disruption
+- **Semantic HTML** - Using `<mark>` element which is semantically correct for highlighting
+
 ### **New Features**
 - **highlightStyle prop**: Customize colors directly via component props
   - `backgroundColor`: Set highlight background color

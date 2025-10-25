@@ -2,7 +2,17 @@
     display: contents;
 }
 
-.highlight-text-container .highlight {
+.highlight-text-container .highlight {    
     background-color: var(--highlight-bg-color, #FFC70A);
     color: var(--highlight-text-color, #000000);
+    display: inline;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    line-height: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    vertical-align: baseline;
 }

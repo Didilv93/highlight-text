@@ -212,7 +212,7 @@ The component works recursively:
 
 1. **Analyzes content** - Traverses all child elements
 2. **Identifies text** - Finds text nodes within the structure
-3. **Applies highlighting** - Replaces matches with `<span>` elements with CSS class
+3. **Applies highlighting** - Replaces matches with `<mark>` elements with CSS class
 4. **Preserves structure** - Maintains all original HTML elements
 5. **Rebuilds tree** - Returns complete structure with applied highlights
 
@@ -228,8 +228,8 @@ The component works recursively:
 // Output (rendered):
 <div className="highlight-text-container">
   <div>
-    <h1>Title about <span className="highlight">React</span></h1>
-    <p><span className="highlight">React</span> is great</p>
+    <h1>Title about <mark className="highlight">React</mark></h1>
+    <p><mark className="highlight">React</mark> is great</p>
   </div>
 </div>
 ```

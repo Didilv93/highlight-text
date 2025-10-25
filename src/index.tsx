@@ -70,7 +70,7 @@ function processTextNode(textContent: string, search: string, caseSensitive: boo
             return part.content;
         }
         return React.createElement(
-            'span',
+            'mark',
             {
                 key: `highlight-${index}`,
                 className: highlightClassName
