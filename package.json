@@ -1,7 +1,7 @@
 {
   "name": "@dspackages/highlight-text",
-  "version": "1.0.1",
-  "description": "A React component for highlighting text matches with customizable styling",
+  "version": "2.0.0",
+  "description": "A React component wrapper for highlighting text matches within any children content with customizable styling",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
