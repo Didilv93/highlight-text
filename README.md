@@ -1,24 +1,24 @@
 # @dspackages/highlight-text
 
-Um componente React wrapper que aplica highlight em qualquer conteúdo de texto dentro de `children` com estilização customizável.
+A React component wrapper that applies highlighting to any text content within `children` with customizable styling.
 
-## ✨ Características
+## ✨ Features
 
-- 🎯 **Wrapper inteligente** - Aplica highlight em todo conteúdo dentro do componente
-- 🏗️ **Estrutura preservada** - Mantém elementos HTML aninhados intactos
-- 🎨 **Totalmente customizável** - Classes CSS configuráveis
-- 🔍 **Busca avançada** - Suporte a regex e case-sensitive
-- 📱 **Responsivo** - Funciona em qualquer estrutura HTML
-- ⚡ **Performance otimizada** - Processamento inteligente e recursivo
-- 🔒 **TypeScript** - Tipagem completa incluída
+- 🎯 **Smart wrapper** - Applies highlighting to all content within the component
+- 🏗️ **Structure preserved** - Maintains nested HTML elements intact
+- 🎨 **Fully customizable** - Configurable CSS classes
+- 🔍 **Advanced search** - Regex and case-sensitive support
+- 📱 **Responsive** - Works with any HTML structure
+- ⚡ **Performance optimized** - Smart and recursive processing
+- 🔒 **TypeScript** - Complete typing included
 
-## 🚀 Instalação
+## 🚀 Installation
 
 ```bash
 npm install @dspackages/highlight-text
 ```
 
-## 📝 Uso Básico
+## 📝 Basic Usage
 
 ```tsx
 import HighlightText from '@dspackages/highlight-text';
@@ -27,11 +27,11 @@ function App() {
   return (
     <HighlightText search="React">
       <div>
-        <h1>Aprendendo React</h1>
-        <p>React é uma biblioteca JavaScript para criar interfaces.</p>
+        <h1>Learning React</h1>
+        <p>React is a JavaScript library for building user interfaces.</p>
         <ul>
-          <li>React hooks são úteis</li>
-          <li>Componentes React são reutilizáveis</li>
+          <li>React hooks are useful</li>
+          <li>React components are reusable</li>
         </ul>
       </div>
     </HighlightText>
@@ -41,42 +41,42 @@ function App() {
 
 ## ⚙️ Props
 
-| Prop | Tipo | Padrão | Descrição |
-|------|------|--------|-----------|
-| `children` | `ReactNode` | - | **Obrigatório** - Conteúdo onde será aplicado o highlight |
-| `search` | `string` | - | **Obrigatório** - Termo a ser destacado |
-| `caseSensitive` | `boolean` | `false` | Se a busca deve ser case-sensitive |
-| `className` | `string` | `'highlight-text-container'` | Classe CSS do container |
-| `highlightClassName` | `string` | `'highlight'` | Classe CSS dos highlights |
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `children` | `ReactNode` | - | **Required** - Content where highlighting will be applied |
+| `search` | `string` | - | **Required** - Term to be highlighted |
+| `caseSensitive` | `boolean` | `false` | Whether the search should be case-sensitive |
+| `className` | `string` | `'highlight-text-container'` | CSS class for the container |
+| `highlightClassName` | `string` | `'highlight'` | CSS class for highlights |
 
-## 🎨 Exemplos de Uso
+## 🎨 Usage Examples
 
-### Texto Simples
+### Simple Text
 ```tsx
-<HighlightText search="importante">
-  Esta é uma mensagem importante para destacar.
+<HighlightText search="important">
+  This is an important message to highlight.
 </HighlightText>
 ```
 
-### HTML Aninhado
+### Nested HTML
 ```tsx
 <HighlightText search="JavaScript" caseSensitive={true}>
   <article>
-    <h2>Sobre JavaScript</h2>
-    <p>JavaScript é uma linguagem de programação.</p>
+    <h2>About JavaScript</h2>
+    <p>JavaScript is a programming language.</p>
     <div>
-      <strong>JavaScript moderno</strong> inclui muitas funcionalidades.
+      <strong>Modern JavaScript</strong> includes many features.
     </div>
   </article>
 </HighlightText>
 ```
 
-### Múltiplos Elementos
+### Multiple Elements
 ```tsx
 <HighlightText search="React|JavaScript" caseSensitive={false}>
   <div>
-    <p>React facilita o desenvolvimento.</p>
-    <span>JavaScript é fundamental.</span>
+    <p>React makes development easier.</p>
+    <span>JavaScript is fundamental.</span>
     <ul>
       <li>React hooks</li>
       <li>JavaScript ES6+</li>
@@ -85,30 +85,30 @@ function App() {
 </HighlightText>
 ```
 
-### Tabelas e Estruturas Complexas
+### Tables and Complex Structures
 ```tsx
-<HighlightText search="dados">
+<HighlightText search="data">
   <table>
     <thead>
       <tr>
-        <th>Dados Pessoais</th>
-        <th>Informação</th>
+        <th>Personal Data</th>
+        <th>Information</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Nome</td>
-        <td>Dados do usuário</td>
+        <td>Name</td>
+        <td>User data</td>
       </tr>
     </tbody>
   </table>
 </HighlightText>
 ```
 
-## 🎨 Customização de Estilo
+## 🎨 Style Customization
 
-### CSS Padrão
-O componente vem com estilos padrão que você pode sobrescrever:
+### Default CSS
+The component comes with default styles that you can override:
 
 ```css
 .highlight {
@@ -118,7 +118,7 @@ O componente vem com estilos padrão que você pode sobrescrever:
 }
 ```
 
-### Estilos Customizados
+### Custom Styles
 ```css
 .my-custom-highlight {
   background: linear-gradient(45deg, #ff6b6b, #feca57);
@@ -140,120 +140,120 @@ O componente vem com estilos padrão que você pode sobrescrever:
 
 ```tsx
 <HighlightText 
-  search="destaque"
+  search="highlight"
   highlightClassName="my-custom-highlight"
 >
-  <p>Texto com destaque customizado muito bonito!</p>
+  <p>Text with beautiful custom highlight!</p>
 </HighlightText>
 ```
 
-## � Busca Avançada
+## 🔍 Advanced Search
 
 ### Case Sensitive
 ```tsx
 <HighlightText search="React" caseSensitive={true}>
-  <p>React é diferente de react quando case-sensitive está ativo.</p>
+  <p>React is different from react when case-sensitive is active.</p>
 </HighlightText>
 ```
 
-### Regex (Múltiplas Palavras)
+### Regex (Multiple Words)
 ```tsx
 <HighlightText search="React|JavaScript|TypeScript">
   <div>
-    <p>React, JavaScript e TypeScript são tecnologias modernas.</p>
-    <span>Todas as três palavras serão destacadas automaticamente.</span>
+    <p>React, JavaScript and TypeScript are modern technologies.</p>
+    <span>All three words will be highlighted automatically.</span>
   </div>
 </HighlightText>
 ```
 
-### Padrões Complexos
+### Complex Patterns
 ```tsx
 <HighlightText search="\\b\\w+Script\\b">
-  <p>JavaScript, TypeScript e ActionScript serão destacados.</p>
+  <p>JavaScript, TypeScript and ActionScript will be highlighted.</p>
 </HighlightText>
 ```
 
-## 🏗️ Como Funciona
+## 🏗️ How It Works
 
-O componente funciona recursivamente:
+The component works recursively:
 
-1. **Analisa o conteúdo** - Percorre todos os elementos filhos
-2. **Identifica texto** - Encontra nós de texto dentro da estrutura
-3. **Aplica highlight** - Substitui matches por elementos `<span>` com classe CSS
-4. **Preserva estrutura** - Mantém todos os elementos HTML originais
-5. **Reconstrói árvore** - Retorna a estrutura completa com highlights aplicados
+1. **Analyzes content** - Traverses all child elements
+2. **Identifies text** - Finds text nodes within the structure
+3. **Applies highlighting** - Replaces matches with `<span>` elements with CSS class
+4. **Preserves structure** - Maintains all original HTML elements
+5. **Rebuilds tree** - Returns complete structure with applied highlights
 
 ```tsx
-// Entrada:
+// Input:
 <HighlightText search="React">
   <div>
-    <h1>Título sobre React</h1>
-    <p>React é ótimo</p>
+    <h1>Title about React</h1>
+    <p>React is great</p>
   </div>
 </HighlightText>
 
-// Saída (renderizada):
+// Output (rendered):
 <div className="highlight-text-container">
   <div>
-    <h1>Título sobre <span className="highlight">React</span></h1>
-    <p><span className="highlight">React</span> é ótimo</p>
+    <h1>Title about <span className="highlight">React</span></h1>
+    <p><span className="highlight">React</span> is great</p>
   </div>
 </div>
 ```
 
-## 📋 Casos de Uso
+## 📋 Use Cases
 
-### ✅ Ideal para:
-- **Resultados de busca** - Destacar termos encontrados
-- **Documentação** - Destacar palavras-chave
-- **Tutorials** - Enfatizar conceitos importantes
-- **Blogs** - Highlight de termos técnicos
-- **Dashboards** - Destacar métricas importantes
-- **E-learning** - Destacar conceitos em lições
+### ✅ Ideal for:
+- **Search results** - Highlight found terms
+- **Documentation** - Highlight keywords
+- **Tutorials** - Emphasize important concepts
+- **Blogs** - Highlight technical terms
+- **Dashboards** - Highlight important metrics
+- **E-learning** - Highlight concepts in lessons
 
-### ⚠️ Considerações:
-- Para textos muito grandes (>10MB), considere paginação
-- Regex complexas podem impactar performance
-- Elementos com event listeners são preservados
+### ⚠️ Considerations:
+- For very large texts (>10MB), consider pagination
+- Complex regex patterns may impact performance
+- Elements with event listeners are preserved
 
-## 🛠️ Desenvolvimento
+## 🛠️ Development
 
 ```bash
-# Instalar dependências
+# Install dependencies
 npm install
 
-# Build da biblioteca
+# Build library
 npm run build
 
-# Executar exemplo
+# Run example
 cd example-app
 npm install
 npm start
 ```
 
-## 📄 Migração da v1.x
+## 📄 Migration from v1.x
 
-### Mudanças principais:
+### Main changes:
 - **Props**: `text` → `children`
-- **Funcionalidade**: Agora funciona com qualquer conteúdo HTML
-- **Flexibilidade**: Suporte completo a estruturas aninhadas
+- **Functionality**: Now works with any HTML content
+- **Flexibility**: Complete support for nested structures
 
-### Antes (v1.x):
+### Before (v1.x):
 ```tsx
 <HighlightText 
-  text="Texto para destacar palavras"
-  search="palavras"
+  text="Text to highlight words"
+  search="words"
 />
 ```
 
-### Depois (v2.x):
+### After (v2.x):
 ```tsx
-<HighlightText search="palavras">
-  Texto para destacar palavras
+<HighlightText search="words">
+  Text to highlight words
 </HighlightText>
 ```
 
-## 📄 Licença
+## 📄 License
 
 MIT © Diego Silva
 

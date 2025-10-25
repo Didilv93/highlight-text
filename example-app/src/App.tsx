@@ -19,7 +19,7 @@ function App() {
               type="text" 
               value={searchTerm} 
               onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Digite o termo para destacar..."
+              placeholder="Enter the term to highlight..."
             />
           </div>
           
@@ -36,76 +36,76 @@ function App() {
         </div>
 
         <div className="example">
-          <h2>Exemplo 1: Texto Simples</h2>
+          <h2>Example 1: Simple Text</h2>
           <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
-            Este é um exemplo de como usar React para criar componentes reutilizáveis. 
-            O React é uma biblioteca JavaScript muito popular para desenvolvimento web.
+            This is an example of how to use React to create reusable components. 
+            React is a very popular JavaScript library for web development.
           </HighlightText>
         </div>
 
         <div className="example">
-          <h2>Exemplo 2: HTML Aninhado</h2>
+          <h2>Example 2: Nested HTML</h2>
           <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
             <div>
-              <h3>Título com React</h3>
-              <p>Este parágrafo contém <strong>React em negrito</strong> e <em>react em itálico</em>.</p>
+              <h3>Title with React</h3>
+              <p>This paragraph contains <strong>React in bold</strong> and <em>react in italics</em>.</p>
               <ul>
-                <li>Item 1: React é ótimo</li>
-                <li>Item 2: react hooks são úteis</li>
-                <li>Item 3: Componentes React são reutilizáveis</li>
+                <li>Item 1: React is great</li>
+                <li>Item 2: react hooks are useful</li>
+                <li>Item 3: React components are reusable</li>
               </ul>
             </div>
           </HighlightText>
         </div>
 
         <div className="example">
-          <h2>Exemplo 3: Múltiplos Elementos</h2>
+          <h2>Example 3: Multiple Elements</h2>
           <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
-            <p>Primeiro parágrafo com React.</p>
+            <p>First paragraph with React.</p>
             <div>
-              <span>Span com react</span>
+              <span>Span with react</span>
               <br />
-              <small>Texto pequeno: REACT em maiúsculas</small>
+              <small>Small text: REACT in uppercase</small>
             </div>
             <blockquote>
-              "React torna o desenvolvimento mais fácil" - Desenvolvedor
+              "React makes development easier" - Developer
             </blockquote>
           </HighlightText>
         </div>
 
         <div className="example">
-          <h2>Exemplo 4: Estilo Customizado</h2>
+          <h2>Example 4: Custom Style</h2>
           <HighlightText 
             search={searchTerm} 
             caseSensitive={caseSensitive}
             highlightClassName="custom-highlight-blue"
           >
             <div>
-              <h4>React com destaque azul</h4>
-              <p>Todos os termos "react" neste bloco ficarão com fundo azul.</p>
-              <span>React, react, REACT - todos destacados!</span>
+              <h4>React with blue highlight</h4>
+              <p>All "react" terms in this block will have blue background.</p>
+              <span>React, react, REACT - all highlighted!</span>
             </div>
           </HighlightText>
         </div>
 
         <div className="example">
-          <h2>Exemplo 5: Tabela</h2>
+          <h2>Example 5: Table</h2>
           <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
             <table style={{border: '1px solid #ccc', borderCollapse: 'collapse', width: '100%'}}>
               <thead>
                 <tr>
-                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Tecnologia</th>
-                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Descrição</th>
+                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Technology</th>
+                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Description</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td style={{border: '1px solid #ccc', padding: '8px'}}>React</td>
-                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Biblioteca para interfaces</td>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Library for interfaces</td>
                 </tr>
                 <tr>
                   <td style={{border: '1px solid #ccc', padding: '8px'}}>JavaScript</td>
-                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Linguagem de programação</td>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Programming language</td>
                 </tr>
               </tbody>
             </table>

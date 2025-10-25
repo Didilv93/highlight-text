@@ -1,41 +1,41 @@
-# Passos para testar a biblioteca
+# Steps to test the library
 
-## 1. Primeiro, faça o build da biblioteca
+## 1. First, build the library
 
 ```bash
-# No diretório raiz da biblioteca
+# In the library root directory
 cd C:\Users\diego\Documents\projects\highlight-text
 npm run build
 ```
 
-## 2. Instale as dependências do exemplo
+## 2. Install example dependencies
 
 ```bash
-# No diretório do exemplo
+# In the example directory
 cd C:\Users\diego\Documents\projects\highlight-text\example-app
 npm install
 ```
 
-## 3. Instale a biblioteca local
+## 3. Install the local library
 
 ```bash
-# Ainda no diretório example-app
+# Still in the example-app directory
 npm run install-local
 ```
 
-## 4. Execute o projeto
+## 4. Run the project
 
 ```bash
 npm start
 ```
 
-O projeto será aberto em http://localhost:3000
+The project will open at http://localhost:3000
 
-## Funcionalidades testáveis:
+## Testable features:
 
-- ✅ Busca básica com destaque
-- ✅ Busca case-sensitive 
-- ✅ Busca com regex (múltiplas palavras)
-- ✅ Estilos customizados
-- ✅ Teste interativo com input
-- ✅ Diferentes exemplos de uso
+- ✅ Basic search with highlighting
+- ✅ Case-sensitive search
+- ✅ Regex search (multiple words)
+- ✅ Custom styles
+- ✅ Interactive test with input
+- ✅ Different usage examples

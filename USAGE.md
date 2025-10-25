@@ -1,12 +1,12 @@
-# Como usar em seus projetos React
+# How to use in your React projects
 
-## 1. Instalação (quando publicado)
+## 1. Installation (when published)
 
 ```bash
 npm install @dspackages/highlight-text
 ```
 
-## 2. Uso básico
+## 2. Basic usage
 
 ```tsx
 import React from 'react';
@@ -15,10 +15,10 @@ import HighlightText from '@dspackages/highlight-text';
 function App() {
   return (
     <div>
-      <h1>Meu App</h1>
+      <h1>My App</h1>
       <HighlightText 
-        text="Aqui está um texto de exemplo para demonstrar o highlight"
-        search="exemplo"
+        text="Here is an example text to demonstrate the highlight"
+        search="example"
       />
     </div>
   );
@@ -27,30 +27,30 @@ function App() {
 export default App;
 ```
 
-## 3. Uso local (desenvolvimento)
+## 3. Local usage (development)
 
-Para usar enquanto desenvolve:
+For use while developing:
 
 ```bash
-# No diretório da sua biblioteca
+# In your library directory
 npm run build
 
-# No seu projeto React
-npm install file:../caminho/para/highlight-text
+# In your React project
+npm install file:../path/to/highlight-text
 ```
 
-## 4. Propriedades disponíveis
+## 4. Available properties
 
-- `text`: string - O texto a ser renderizado
-- `search`: string - O termo a ser destacado (suporta regex)
-- `caseSensitive`: boolean (opcional) - Busca case-sensitive
-- `className`: string (opcional) - Classe CSS do container
-- `highlightClassName`: string (opcional) - Classe CSS dos highlights
+- `text`: string - The text to be rendered
+- `search`: string - The term to be highlighted (supports regex)
+- `caseSensitive`: boolean (optional) - Case-sensitive search
+- `className`: string (optional) - Container CSS class
+- `highlightClassName`: string (optional) - Highlights CSS class
 
-## 5. Personalização de estilo
+## 5. Style customization
 
 ```css
-/* Seus estilos customizados */
+/* Your custom styles */
 .my-highlight {
   background-color: #ffeb3b;
   color: #333;
@@ -62,8 +62,8 @@ npm install file:../caminho/para/highlight-text
 
 ```tsx
 <HighlightText 
-  text="Texto com estilo personalizado"
-  search="personalizado"
+  text="Text with custom style"
+  search="custom"
   highlightClassName="my-highlight"
 />
 ```

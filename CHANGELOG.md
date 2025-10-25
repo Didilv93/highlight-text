@@ -3,43 +3,43 @@
 ## [2.0.0] - 2025-10-25
 
 ### 🚀 **BREAKING CHANGES**
-- **API completamente reformulada** - Agora funciona como wrapper com `children` em vez de prop `text`
-- **Funcionalidade expandida** - Suporte completo a estruturas HTML aninhadas
-- **Maior flexibilidade** - Funciona com qualquer tipo de conteúdo React
+- **Completely redesigned API** - Now works as wrapper with `children` instead of `text` prop
+- **Expanded functionality** - Full support for nested HTML structures
+- **Greater flexibility** - Works with any type of React content
 
 ### ✨ **Added**
-- 🎯 **Wrapper inteligente** - Aplica highlight em todo conteúdo dentro do componente
-- 🏗️ **Processamento recursivo** - Percorre e processa elementos HTML aninhados
-- 📱 **Suporte universal** - Funciona com textos, elementos, tabelas, listas, etc.
-- ⚡ **Performance otimizada** - Algoritmo melhorado para estruturas complexas
-- 🔍 **Preservação de estrutura** - Mantém todos os elementos e props originais
+- 🎯 **Smart wrapper** - Applies highlighting to all content within the component
+- 🏗️ **Recursive processing** - Traverses and processes nested HTML elements
+- 📱 **Universal support** - Works with texts, elements, tables, lists, etc.
+- ⚡ **Optimized performance** - Improved algorithm for complex structures
+- 🔍 **Structure preservation** - Maintains all original elements and props
 
 ### 🔄 **Changed**
-- **Props principais**: `text` → `children` (BREAKING)
-- **Container padrão**: `<span>` → `<div>` para melhor compatibilidade
-- **Processamento**: Single string → Recursive children processing
-- **Flexibilidade**: Texto simples → Qualquer conteúdo React
+- **Main props**: `text` → `children` (BREAKING)
+- **Default container**: `<span>` → `<div>` for better compatibility
+- **Processing**: Single string → Recursive children processing
+- **Flexibility**: Simple text → Any React content
 
 ### 🛠️ **Technical**
-- Implementado processamento recursivo com `cloneElement`
-- Adicionado suporte a `ReactElement`, arrays, e tipos primitivos
-- Melhorado tratamento de edge cases
-- Otimizado algoritmo de busca e substituição
+- Implemented recursive processing with `cloneElement`
+- Added support for `ReactElement`, arrays, and primitive types
+- Improved edge case handling
+- Optimized search and replace algorithm
 
 ### 📖 **Documentation**
-- **README completamente reescrito** com novos exemplos
-- **Casos de uso expandidos** - tabelas, listas, HTML complexo
-- **Guia de migração** da v1.x para v2.x
-- **Exemplos avançados** com regex e estruturas aninhadas
+- **README completely rewritten** with new examples
+- **Expanded use cases** - tables, lists, complex HTML
+- **Migration guide** from v1.x to v2.x
+- **Advanced examples** with regex and nested structures
 
 ### 🔧 **Migration Guide**
 ```tsx
 // v1.x (OLD)
-<HighlightText text="Meu texto" search="texto" />
+<HighlightText text="My text" search="text" />
 
 // v2.x (NEW)
-<HighlightText search="texto">
-  Meu texto
+<HighlightText search="text">
+  My text
 </HighlightText>
 ```
 
@@ -48,32 +48,32 @@
 ## [1.0.1] - 2025-10-24
 
 ### Fixed
-- 🐛 **Resolvido erro "Invalid hook call"** - Removido `useMemo` que causava conflitos com múltiplas instâncias do React
-- 🔧 **Eliminados problemas de compatibilidade** - Substituído JSX por `React.createElement` para máxima compatibilidade
-- ⚡ **Melhorada estabilidade** - Função de processamento de texto agora é completamente pura
-- 🛠️ **Corrigidos problemas de build** - Configuração otimizada para distribuição
+- 🐛 **Fixed "Invalid hook call" error** - Removed `useMemo` that caused conflicts with multiple React instances
+- 🔧 **Eliminated compatibility issues** - Replaced JSX with `React.createElement` for maximum compatibility
+- ⚡ **Improved stability** - Text processing function is now completely pure
+- 🛠️ **Fixed build issues** - Optimized configuration for distribution
 
 ### Changed
-- 📦 **Arquitetura simplificada** - Componente mais leve e sem dependências internas do React
-- 🎯 **Melhor performance** - Processamento de texto otimizado
-- 🔒 **Maior estabilidade** - Eliminados side effects e dependências problemáticas
+- 📦 **Simplified architecture** - Lighter component without internal React dependencies
+- 🎯 **Better performance** - Optimized text processing
+- 🔒 **Greater stability** - Eliminated side effects and problematic dependencies
 
 ### Technical
-- Removido `useMemo` hook
-- Implementada função pura `processText`
-- Substituído JSX por `React.createElement`
-- Melhorada configuração de build
-- Adicionado tratamento robusto de regex
+- Removed `useMemo` hook
+- Implemented pure `processText` function
+- Replaced JSX with `React.createElement`
+- Improved build configuration
+- Added robust regex handling
 
 ---
 
 ## [1.0.0] - 2025-10-24
 
 ### Added
-- 🎉 **Lançamento inicial** da biblioteca highlight-text
-- ✨ **Componente HighlightText** para destacar texto em aplicações React
-- 🎨 **Estilos customizáveis** com classes CSS configuráveis
-- 🔍 **Busca case-sensitive opcional**
-- 🚀 **Suporte a regex** para buscas avançadas
-- 📚 **TypeScript** com tipagem completa
-- 📖 **Documentação completa** com exemplos
+- 🎉 **Initial release** of highlight-text library
+- ✨ **HighlightText component** for highlighting text in React applications
+- 🎨 **Customizable styles** with configurable CSS classes
+- 🔍 **Optional case-sensitive search**
+- 🚀 **Regex support** for advanced searches
+- 📚 **TypeScript** with complete typing
+- 📖 **Complete documentation** with examples

@@ -1,22 +1,22 @@
 import React from 'react';
 
-// Versão simplificada para teste
+// Simplified version for testing
 function SimpleTest() {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>🔍 Teste Simples</h1>
-      <p>Se você vê esta mensagem, o React está funcionando.</p>
+      <h1>🔍 Simple Test</h1>
+      <p>If you see this message, React is working.</p>
       
       <div style={{ background: '#f0f0f0', padding: '10px', margin: '10px 0' }}>
-        <h3>Teste sem biblioteca:</h3>
+        <h3>Test without library:</h3>
         <span>
-          Este é um <span style={{ backgroundColor: '#FFC70A', padding: '2px' }}>exemplo</span> simples
+          This is a simple <span style={{ backgroundColor: '#FFC70A', padding: '2px' }}>example</span>
         </span>
       </div>
       
       <div style={{ background: '#e8f4fd', padding: '10px', margin: '10px 0' }}>
-        <h3>Status da importação:</h3>
-        <p>Tentando importar a biblioteca...</p>
+        <h3>Import status:</h3>
+        <p>Trying to import the library...</p>
         <TestLibraryImport />
       </div>
     </div>
@@ -25,15 +25,15 @@ function SimpleTest() {
 
 function TestLibraryImport() {
   try {
-    // Importação dinâmica para testar
+    // Dynamic import for testing
     const HighlightText = require('@dspackages/highlight-text').default;
     
     return (
       <div>
-        <p>✅ Biblioteca importada com sucesso!</p>
+        <p>✅ Library imported successfully!</p>
         <HighlightText 
-          text="Teste básico de funcionamento"
-          search="básico"
+          text="Basic functionality test"
+          search="basic"
         />
       </div>
     );
@@ -41,7 +41,7 @@ function TestLibraryImport() {
     const err = error as Error;
     return (
       <div style={{ color: 'red' }}>
-        <p>❌ Erro na importação da biblioteca:</p>
+        <p>❌ Library import error:</p>
         <p>{err.message}</p>
       </div>
     );
