@@ -10,6 +10,7 @@ export type TProps = {
     highlightClassName?: string;
     highlightStyle?: {
         backgroundColor?: string;
+        fontWeight?: string;
         color?: string;
     };
 };
@@ -127,6 +128,7 @@ const HighlightText = ({
 
     const containerStyle: React.CSSProperties = highlightStyle ? {
         '--highlight-bg-color': highlightStyle.backgroundColor,
+        '--highlight-font-weight': highlightStyle.fontWeight,
         '--highlight-text-color': highlightStyle.color,
     } as React.CSSProperties : {};
 

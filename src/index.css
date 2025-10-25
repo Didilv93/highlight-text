@@ -2,9 +2,10 @@
     display: contents;
 }
 
-.highlight-text-container .highlight {    
+.highlight-text-container .highlight {
     background-color: var(--highlight-bg-color, #FFC70A);
     color: var(--highlight-text-color, #000000);
+    font-weight: var(--highlight-font-weight, inherit);
     display: inline;
     margin: 0;
     padding: 0;

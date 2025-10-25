@@ -156,6 +156,7 @@ You can now customize highlight colors directly via props without CSS:
   search="highlight"
   highlightStyle={{
     backgroundColor: '#e91e63',
+    fontWeight: 'bold',
     color: '#ffffff',
   }}
 >
@@ -173,6 +174,7 @@ Available style options:
   search="important"
   highlightStyle={{
     backgroundColor: '#4caf50',
+    fontWeight: 'bold',
     color: '#000000',
   }}
 >

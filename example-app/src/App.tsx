@@ -95,6 +95,7 @@ function App() {
             caseSensitive={caseSensitive}
             highlightStyle={{
               backgroundColor: '#e91e63',
+              fontWeight: 'bold',
               color: '#ffffff',
             }}
           >
@@ -113,6 +114,7 @@ function App() {
             caseSensitive={caseSensitive}
             highlightStyle={{
               backgroundColor: '#4caf50',
+              fontWeight: 'bold',
               color: '#000000',
             }}
           >

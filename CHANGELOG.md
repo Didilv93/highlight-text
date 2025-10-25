@@ -33,6 +33,7 @@
   search="text"
   highlightStyle={{
     backgroundColor: '#e91e63',
+    fontWeight: 'bold',
     color: '#ffffff',
   }}
 >
