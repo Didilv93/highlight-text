@@ -3,7 +3,6 @@
 }
 
 .highlight-text-container .highlight {
-    background-color: #FFC70A;
-    color: #000000;
-    font-weight: bold;
+    background-color: var(--highlight-bg-color, #FFC70A);
+    color: var(--highlight-text-color, #000000);
 }

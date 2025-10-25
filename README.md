@@ -48,6 +48,7 @@ function App() {
 | `caseSensitive` | `boolean` | `false` | Whether the search should be case-sensitive |
 | `className` | `string` | `'highlight-text-container'` | CSS class for the container |
 | `highlightClassName` | `string` | `'highlight'` | CSS class for highlights |
+| `highlightStyle` | `object` | `undefined` | **NEW** - Inline styles for highlights |
 
 ## 🎨 Usage Examples
 
@@ -144,6 +145,38 @@ The component comes with default styles that you can override:
   highlightClassName="my-custom-highlight"
 >
   <p>Text with beautiful custom highlight!</p>
+</HighlightText>
+```
+
+### Style via Props (NEW)
+You can now customize highlight colors directly via props without CSS:
+
+```tsx
+<HighlightText 
+  search="highlight"
+  highlightStyle={{
+    backgroundColor: '#e91e63',
+    color: '#ffffff',
+  }}
+>
+  <p>Text with pink highlight using props!</p>
+</HighlightText>
+```
+
+Available style options:
+- `backgroundColor`: Background color of highlights
+- `color`: Text color of highlights  
+
+```tsx
+// Green theme example
+<HighlightText 
+  search="important"
+  highlightStyle={{
+    backgroundColor: '#4caf50',
+    color: '#000000',
+  }}
+>
+  <p>This important message has green highlights.</p>
 </HighlightText>
 ```
 

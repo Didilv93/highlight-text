@@ -74,7 +74,7 @@ function App() {
         </div>
 
         <div className="example">
-          <h2>Example 4: Custom Style</h2>
+          <h2>Example 4: Custom Style via CSS Class</h2>
           <HighlightText 
             search={searchTerm} 
             caseSensitive={caseSensitive}
@@ -84,6 +84,42 @@ function App() {
               <h4>React with blue highlight</h4>
               <p>All "react" terms in this block will have blue background.</p>
               <span>React, react, REACT - all highlighted!</span>
+            </div>
+          </HighlightText>
+        </div>
+
+        <div className="example">
+          <h2>Example 5: Custom Style via Props</h2>
+          <HighlightText 
+            search={searchTerm} 
+            caseSensitive={caseSensitive}
+            highlightStyle={{
+              backgroundColor: '#e91e63',
+              color: '#ffffff',
+            }}
+          >
+            <div>
+              <h4>React with pink highlight via props</h4>
+              <p>These highlights use inline style props instead of CSS classes.</p>
+              <span>React, react, REACT - all with custom colors!</span>
+            </div>
+          </HighlightText>
+        </div>
+
+        <div className="example">
+          <h2>Example 6: Green Theme via Props</h2>
+          <HighlightText 
+            search={searchTerm} 
+            caseSensitive={caseSensitive}
+            highlightStyle={{
+              backgroundColor: '#4caf50',
+              color: '#000000',
+            }}
+          >
+            <div>
+              <h4>React with green highlight</h4>
+              <p>Another example with different colors using props.</p>
+              <span>React, react, REACT - green theme!</span>
             </div>
           </HighlightText>
         </div>
