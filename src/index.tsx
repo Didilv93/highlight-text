@@ -1,16 +1,15 @@
-import React from 'react';
+import React, { ReactNode, ReactElement, cloneElement, isValidElement } from 'react';
 
 import './index.css';
 
 export type TProps = {
-    text: string;
+    children: ReactNode;
     search: string;
     caseSensitive?: boolean;
     className?: string;
     highlightClassName?: string;
 };
 
-// Função pura sem dependências do React
 function processText(text: string, search: string, caseSensitive: boolean = false) {
     if (!text || !search) return [{ type: 'text', content: text }];
     
@@ -23,11 +22,9 @@ function processText(text: string, search: string, caseSensitive: boolean = fals
         let lastIndex = 0;
         let match;
         
-        // Reset regex lastIndex
         regex.lastIndex = 0;
         
         while ((match = regex.exec(text)) !== null) {
-            // Add text before match
             if (match.index > lastIndex) {
                 parts.push({
                     type: 'text',
@@ -35,7 +32,6 @@ function processText(text: string, search: string, caseSensitive: boolean = fals
                 });
             }
             
-            // Add highlighted match
             parts.push({
                 type: 'highlight',
                 content: match[0]
@@ -43,13 +39,11 @@ function processText(text: string, search: string, caseSensitive: boolean = fals
             
             lastIndex = match.index + match[0].length;
             
-            // Prevent infinite loop
             if (match[0].length === 0) {
                 regex.lastIndex++;
             }
         }
         
-        // Add remaining text
         if (lastIndex < text.length) {
             parts.push({
                 type: 'text',
@@ -64,32 +58,72 @@ function processText(text: string, search: string, caseSensitive: boolean = fals
     }
 }
 
-// Componente React usando createElement diretamente para evitar problemas de JSX
+function processTextNode(textContent: string, search: string, caseSensitive: boolean, highlightClassName: string): ReactNode[] {
+    const parts = processText(textContent, search, caseSensitive);
+    
+    return parts.map((part, index) => {
+        if (part.type === 'text') {
+            return part.content;
+        }
+        return React.createElement(
+            'span',
+            { 
+                key: `highlight-${index}`, 
+                className: highlightClassName 
+            },
+            part.content
+        );
+    });
+}
+
+function processChildren(children: ReactNode, search: string, caseSensitive: boolean, highlightClassName: string): ReactNode {
+    if (typeof children === 'string') {
+        return processTextNode(children, search, caseSensitive, highlightClassName);
+    }
+    
+    if (typeof children === 'number') {
+        return processTextNode(children.toString(), search, caseSensitive, highlightClassName);
+    }
+    
+    if (Array.isArray(children)) {
+        return children.map((child, index) => 
+            React.createElement(
+                React.Fragment,
+                { key: index },
+                processChildren(child, search, caseSensitive, highlightClassName)
+            )
+        );
+    }
+    
+    if (isValidElement(children)) {
+        const element = children as ReactElement;
+        
+        if (element.props && element.props.children) {
+            return cloneElement(element, {
+                ...element.props,
+                children: processChildren(element.props.children, search, caseSensitive, highlightClassName)
+            });
+        }
+        
+        return element;
+    }
+    
+    return children;
+}
+
 const HighlightText = ({ 
-    text, 
+    children,
     search, 
     caseSensitive = false, 
     className = 'highlight-text-container',
     highlightClassName = 'highlight'
 }: TProps) => {
-    const parts = processText(text, search, caseSensitive);
+    const processedChildren = processChildren(children, search, caseSensitive, highlightClassName);
 
     return React.createElement(
-        'span',
+        'div',
         { className },
-        ...parts.map((part, index) => {
-            if (part.type === 'text') {
-                return part.content;
-            }
-            return React.createElement(
-                'span',
-                { 
-                    key: index, 
-                    className: highlightClassName 
-                },
-                part.content
-            );
-        })
+        processedChildren
     );
 };
 

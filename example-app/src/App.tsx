@@ -1,136 +1,117 @@
 import React, { useState } from 'react';
 import HighlightText from '@dspackages/highlight-text';
+import './App.css';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState('exemplo');
+  const [searchTerm, setSearchTerm] = useState('React');
   const [caseSensitive, setCaseSensitive] = useState(false);
 
-  const sampleTexts = [
-    "Este é um exemplo de texto para destacar palavras importantes no React.",
-    "JavaScript, TypeScript e React são tecnologias modernas para desenvolvimento web.",
-    "O HighlightText é uma biblioteca muito útil para destacar termos em textos.",
-    "React hooks como useState e useEffect facilitam o desenvolvimento de componentes."
-  ];
-
   return (
-    <div className="container">
-      <header style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1 style={{ color: '#333', fontSize: '2.5rem' }}>
-          📝 HighlightText - Demonstração
-        </h1>
-        <p style={{ color: '#666', fontSize: '1.2rem' }}>
-          Teste interativo da biblioteca @dspackages/highlight-text
-        </p>
-      </header>
-
-      {/* Controles de busca */}
-      <div className="example-section">
-        <h3>🔍 Configurações de Busca</h3>
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Digite o termo para destacar..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <label style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <input
-            type="checkbox"
-            checked={caseSensitive}
-            onChange={(e) => setCaseSensitive(e.target.checked)}
-          />
-          Case Sensitive
-        </label>
-      </div>
-
-      {/* Exemplos básicos */}
-      <div className="example-section">
-        <h3>📋 Exemplos Básicos</h3>
-        {sampleTexts.map((text, index) => (
-          <div key={index} style={{ marginBottom: '15px' }}>
-            <div className="result-text">
-              <HighlightText
-                text={text}
-                search={searchTerm}
-                caseSensitive={caseSensitive}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Exemplo com regex */}
-      <div className="example-section">
-        <h3>🔧 Busca com Regex</h3>
-        <p>Busca múltipla: <code>React|JavaScript|TypeScript</code></p>
-        <div className="result-text">
-          <HighlightText
-            text="Desenvolver aplicações modernas com React, JavaScript e TypeScript é muito produtivo!"
-            search="React|JavaScript|TypeScript"
-            caseSensitive={caseSensitive}
-          />
-        </div>
-      </div>
-
-      {/* Exemplos com estilos customizados */}
-      <div className="example-section">
-        <h3>🎨 Estilos Customizados</h3>
+    <div className="App">
+      <header className="App-header">
+        <h1>HighlightText Component Demo</h1>
         
-        <div style={{ marginBottom: '20px' }}>
-          <h4>Gradiente colorido:</h4>
-          <div className="result-text">
-            <HighlightText
-              text="Este texto tem um destaque customizado muito bonito!"
-              search="destaque customizado"
-              highlightClassName="custom-highlight"
+        <div className="controls">
+          <div className="input-group">
+            <label htmlFor="search">Search Term:</label>
+            <input 
+              id="search"
+              type="text" 
+              value={searchTerm} 
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Digite o termo para destacar..."
             />
+          </div>
+          
+          <div className="checkbox-group">
+            <label>
+              <input 
+                type="checkbox" 
+                checked={caseSensitive}
+                onChange={(e) => setCaseSensitive(e.target.checked)}
+              />
+              Case Sensitive
+            </label>
           </div>
         </div>
 
-        <div style={{ marginBottom: '20px' }}>
-          <h4>Estilo azul:</h4>
-          <div className="result-text">
-            <HighlightText
-              text="Biblioteca de componentes React para destacar texto"
-              search="React"
-              highlightClassName="blue-highlight"
-            />
-          </div>
+        <div className="example">
+          <h2>Exemplo 1: Texto Simples</h2>
+          <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
+            Este é um exemplo de como usar React para criar componentes reutilizáveis. 
+            O React é uma biblioteca JavaScript muito popular para desenvolvimento web.
+          </HighlightText>
         </div>
 
-        <div>
-          <h4>Estilo verde:</h4>
-          <div className="result-text">
-            <HighlightText
-              text="Performance otimizada com useMemo para evitar re-renders desnecessários"
-              search="Performance|useMemo"
-              highlightClassName="green-highlight"
-            />
-          </div>
+        <div className="example">
+          <h2>Exemplo 2: HTML Aninhado</h2>
+          <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
+            <div>
+              <h3>Título com React</h3>
+              <p>Este parágrafo contém <strong>React em negrito</strong> e <em>react em itálico</em>.</p>
+              <ul>
+                <li>Item 1: React é ótimo</li>
+                <li>Item 2: react hooks são úteis</li>
+                <li>Item 3: Componentes React são reutilizáveis</li>
+              </ul>
+            </div>
+          </HighlightText>
         </div>
-      </div>
 
-      {/* Exemplo sem busca */}
-      <div className="example-section">
-        <h3>🚫 Sem Termo de Busca</h3>
-        <p>Quando não há termo de busca, o texto é exibido normalmente:</p>
-        <div className="result-text">
-          <HighlightText
-            text="Este texto não possui nenhum termo destacado."
-            search=""
-          />
+        <div className="example">
+          <h2>Exemplo 3: Múltiplos Elementos</h2>
+          <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
+            <p>Primeiro parágrafo com React.</p>
+            <div>
+              <span>Span com react</span>
+              <br />
+              <small>Texto pequeno: REACT em maiúsculas</small>
+            </div>
+            <blockquote>
+              "React torna o desenvolvimento mais fácil" - Desenvolvedor
+            </blockquote>
+          </HighlightText>
         </div>
-      </div>
 
-      {/* Rodapé */}
-      <footer style={{ textAlign: 'center', marginTop: '40px', color: '#666' }}>
-        <p>
-          🚀 Biblioteca criada por Diego Silva | 
-          <a href="https://github.com/Didilv93/highlight-text" style={{ color: '#007acc', marginLeft: '8px' }}>
-            GitHub
-          </a>
-        </p>
-      </footer>
+        <div className="example">
+          <h2>Exemplo 4: Estilo Customizado</h2>
+          <HighlightText 
+            search={searchTerm} 
+            caseSensitive={caseSensitive}
+            highlightClassName="custom-highlight-blue"
+          >
+            <div>
+              <h4>React com destaque azul</h4>
+              <p>Todos os termos "react" neste bloco ficarão com fundo azul.</p>
+              <span>React, react, REACT - todos destacados!</span>
+            </div>
+          </HighlightText>
+        </div>
+
+        <div className="example">
+          <h2>Exemplo 5: Tabela</h2>
+          <HighlightText search={searchTerm} caseSensitive={caseSensitive}>
+            <table style={{border: '1px solid #ccc', borderCollapse: 'collapse', width: '100%'}}>
+              <thead>
+                <tr>
+                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Tecnologia</th>
+                  <th style={{border: '1px solid #ccc', padding: '8px'}}>Descrição</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>React</td>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Biblioteca para interfaces</td>
+                </tr>
+                <tr>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>JavaScript</td>
+                  <td style={{border: '1px solid #ccc', padding: '8px'}}>Linguagem de programação</td>
+                </tr>
+              </tbody>
+            </table>
+          </HighlightText>
+        </div>
+      </header>
     </div>
   );
 }
