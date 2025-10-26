@@ -12,6 +12,9 @@
 - **Better layout preservation** - Changed from `<span>` to `<mark>` elements for highlighting
 - **Enhanced CSS reset** - Added comprehensive inline styles to prevent layout disruption
 - **Semantic HTML** - Using `<mark>` element which is semantically correct for highlighting
+- **Performance optimization** - Added React.memo with custom comparison function
+- **Memoization improvements** - Added useMemo and useCallback for better performance
+- **Render optimization** - Component only re-renders when props actually change
 
 ### **New Features**
 - **highlightStyle prop**: Customize colors directly via component props

@@ -4,7 +4,7 @@ import React from 'react';
 function SimpleTest() {
   return (
     <div style={{ padding: '20px' }}>
-      <h1>🔍 Simple Test</h1>
+      <h1>Simple Test</h1>
       <p>If you see this message, React is working.</p>
       
       <div style={{ background: '#f0f0f0', padding: '10px', margin: '10px 0' }}>
@@ -30,7 +30,7 @@ function TestLibraryImport() {
     
     return (
       <div>
-        <p>✅ Library imported successfully!</p>
+        <p>Library imported successfully!</p>
         <HighlightText 
           text="Basic functionality test"
           search="basic"
@@ -41,7 +41,7 @@ function TestLibraryImport() {
     const err = error as Error;
     return (
       <div style={{ color: 'red' }}>
-        <p>❌ Library import error:</p>
+        <p>Library import error:</p>
         <p>{err.message}</p>
       </div>
     );

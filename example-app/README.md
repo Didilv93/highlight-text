@@ -33,9 +33,9 @@ The project will open at http://localhost:3000
 
 ## Testable features:
 
-- ✅ Basic search with highlighting
-- ✅ Case-sensitive search
-- ✅ Regex search (multiple words)
-- ✅ Custom styles
-- ✅ Interactive test with input
-- ✅ Different usage examples
+- Basic search with highlighting
+- Case-sensitive search
+- Regex search (multiple words)
+- Custom styles
+- Interactive test with input
+- Different usage examples

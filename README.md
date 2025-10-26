@@ -2,23 +2,23 @@
 
 A React component wrapper that applies highlighting to any text content within `children` with customizable styling.
 
-## ✨ Features
+## Features
 
-- 🎯 **Smart wrapper** - Applies highlighting to all content within the component
-- 🏗️ **Structure preserved** - Maintains nested HTML elements intact
-- 🎨 **Fully customizable** - Configurable CSS classes
-- 🔍 **Advanced search** - Regex and case-sensitive support
-- 📱 **Responsive** - Works with any HTML structure
-- ⚡ **Performance optimized** - Smart and recursive processing
-- 🔒 **TypeScript** - Complete typing included
+- **Smart wrapper** - Applies highlighting to all content within the component
+- **Structure preserved** - Maintains nested HTML elements intact
+- **Fully customizable** - Configurable CSS classes
+- **Advanced search** - Regex and case-sensitive support
+- **Responsive** - Works with any HTML structure
+- **Performance optimized** - React.memo, useMemo, and useCallback for optimal rendering
+- **TypeScript** - Complete typing included
 
-## 🚀 Installation
+## Installation
 
 ```bash
 npm install @dspackages/highlight-text
 ```
 
-## 📝 Basic Usage
+## Basic Usage
 
 ```tsx
 import HighlightText from '@dspackages/highlight-text';
@@ -39,7 +39,7 @@ function App() {
 }
 ```
 
-## ⚙️ Props
+## Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
@@ -50,7 +50,7 @@ function App() {
 | `highlightClassName` | `string` | `'highlight'` | CSS class for highlights |
 | `highlightStyle` | `object` | `undefined` | **NEW** - Inline styles for highlights |
 
-## 🎨 Usage Examples
+## Usage Examples
 
 ### Simple Text
 ```tsx
@@ -106,7 +106,7 @@ function App() {
 </HighlightText>
 ```
 
-## 🎨 Style Customization
+## Style Customization
 
 ### Default CSS
 The component comes with default styles that you can override:
@@ -182,7 +182,7 @@ Available style options:
 </HighlightText>
 ```
 
-## 🔍 Advanced Search
+## Advanced Search
 
 ### Case Sensitive
 ```tsx
@@ -208,7 +208,7 @@ Available style options:
 </HighlightText>
 ```
 
-## 🏗️ How It Works
+## How It Works
 
 The component works recursively:
 
@@ -236,9 +236,9 @@ The component works recursively:
 </div>
 ```
 
-## 📋 Use Cases
+## Use Cases
 
-### ✅ Ideal for:
+### Ideal for:
 - **Search results** - Highlight found terms
 - **Documentation** - Highlight keywords
 - **Tutorials** - Emphasize important concepts
@@ -246,12 +246,12 @@ The component works recursively:
 - **Dashboards** - Highlight important metrics
 - **E-learning** - Highlight concepts in lessons
 
-### ⚠️ Considerations:
+### Considerations:
 - For very large texts (>10MB), consider pagination
 - Complex regex patterns may impact performance
 - Elements with event listeners are preserved
 
-## 🛠️ Development
+## Development
 
 ```bash
 # Install dependencies
@@ -266,7 +266,7 @@ npm install
 npm start
 ```
 
-## 📄 Migration from v1.x
+## Migration from v1.x
 
 ### Main changes:
 - **Props**: `text` → `children`
@@ -288,13 +288,13 @@ npm start
 </HighlightText>
 ```
 
-## 📄 License
+## License
 
 MIT © Diego Silva
 
 ---
 
-### 🔗 Links
+### Links
 - [GitHub](https://github.com/Didilv93/highlight-text)
 - [npm](https://www.npmjs.com/package/@dspackages/highlight-text)
 - [Issues](https://github.com/Didilv93/highlight-text/issues)

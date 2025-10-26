@@ -1,4 +1,4 @@
-import React, { ReactNode, ReactElement, cloneElement, isValidElement } from 'react';
+import React, { ReactNode, ReactElement, cloneElement, isValidElement, useMemo, useCallback } from 'react';
 
 import './index.css';
 
@@ -116,7 +116,38 @@ function processChildren(children: ReactNode, search: string, caseSensitive: boo
     return children;
 }
 
-const HighlightText = ({
+const arePropsEqual = (prevProps: TProps, nextProps: TProps): boolean => {
+    if (
+        prevProps.search !== nextProps.search ||
+        prevProps.caseSensitive !== nextProps.caseSensitive ||
+        prevProps.className !== nextProps.className ||
+        prevProps.highlightClassName !== nextProps.highlightClassName
+    ) {
+        return false;
+    }
+
+    if (prevProps.highlightStyle !== nextProps.highlightStyle) {
+        if (!prevProps.highlightStyle || !nextProps.highlightStyle) {
+            return false;
+        }
+
+        if (
+            prevProps.highlightStyle.backgroundColor !== nextProps.highlightStyle.backgroundColor ||
+            prevProps.highlightStyle.color !== nextProps.highlightStyle.color ||
+            prevProps.highlightStyle.fontWeight !== nextProps.highlightStyle.fontWeight
+        ) {
+            return false;
+        }
+    }
+
+    if (prevProps.children !== nextProps.children) {
+        return false;
+    }
+
+    return true;
+};
+
+const HighlightText = React.memo(({
     children,
     search,
     caseSensitive = false,
@@ -124,13 +155,20 @@ const HighlightText = ({
     highlightClassName = 'highlight',
     highlightStyle
 }: TProps) => {
-    const processedChildren = processChildren(children, search, caseSensitive, highlightClassName);
+    const processedChildren = useMemo(() =>
+        processChildren(children, search, caseSensitive, highlightClassName),
+        [children, search, caseSensitive, highlightClassName]
+    );
 
-    const containerStyle: React.CSSProperties = highlightStyle ? {
-        '--highlight-bg-color': highlightStyle.backgroundColor,
-        '--highlight-font-weight': highlightStyle.fontWeight,
-        '--highlight-text-color': highlightStyle.color,
-    } as React.CSSProperties : {};
+    const containerStyle: React.CSSProperties = useMemo(() => {
+        if (!highlightStyle) return {};
+
+        return {
+            '--highlight-bg-color': highlightStyle.backgroundColor,
+            '--highlight-font-weight': highlightStyle.fontWeight,
+            '--highlight-text-color': highlightStyle.color,
+        } as React.CSSProperties;
+    }, [highlightStyle]);
 
     return React.createElement(
         'div',
@@ -140,6 +178,8 @@ const HighlightText = ({
         },
         processedChildren
     );
-};
+}, arePropsEqual);
+
+HighlightText.displayName = 'HighlightText';
 
 export default HighlightText;
