@@ -1,6 +1,5 @@
 import React from 'react';
 
-// Simplified version for testing
 function SimpleTest() {
   return (
     <div style={{ padding: '20px' }}>
@@ -25,7 +24,6 @@ function SimpleTest() {
 
 function TestLibraryImport() {
   try {
-    // Dynamic import for testing
     const HighlightText = require('@dspackages/highlight-text').default;
     
     return (

@@ -155,20 +155,13 @@ const HighlightText = React.memo(({
     highlightClassName = 'highlight',
     highlightStyle
 }: TProps) => {
-    const processedChildren = useMemo(() =>
-        processChildren(children, search, caseSensitive, highlightClassName),
-        [children, search, caseSensitive, highlightClassName]
-    );
+    const processedChildren = processChildren(children, search, caseSensitive, highlightClassName);
 
-    const containerStyle: React.CSSProperties = useMemo(() => {
-        if (!highlightStyle) return {};
-
-        return {
-            '--highlight-bg-color': highlightStyle.backgroundColor,
-            '--highlight-font-weight': highlightStyle.fontWeight,
-            '--highlight-text-color': highlightStyle.color,
-        } as React.CSSProperties;
-    }, [highlightStyle]);
+    const containerStyle = highlightStyle ? {
+        '--highlight-bg-color': highlightStyle.backgroundColor,
+        '--highlight-font-weight': highlightStyle.fontWeight,
+        '--highlight-text-color': highlightStyle.color,
+    } : {};
 
     return React.createElement(
         'div',
