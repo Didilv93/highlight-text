@@ -9,7 +9,7 @@ A React component wrapper that applies highlighting to any text content within `
 - **Fully customizable** - Configurable CSS classes
 - **Advanced search** - Regex and case-sensitive support
 - **Responsive** - Works with any HTML structure
-- **Performance optimized** - React.memo, useMemo, and useCallback for optimal rendering
+- **Performance optimized** - React.memo for optimal rendering
 - **TypeScript** - Complete typing included
 
 ## Installation
@@ -238,7 +238,7 @@ The component works recursively:
 
 ## Use Cases
 
-### Ideal for:
+### ✅ Ideal for:
 - **Search results** - Highlight found terms
 - **Documentation** - Highlight keywords
 - **Tutorials** - Emphasize important concepts
@@ -294,7 +294,7 @@ MIT © Diego Silva
 
 ---
 
-### Links
+### 🔗 Links
 - [GitHub](https://github.com/Didilv93/highlight-text)
 - [npm](https://www.npmjs.com/package/@dspackages/highlight-text)
 - [Issues](https://github.com/Didilv93/highlight-text/issues)
