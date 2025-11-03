@@ -9,7 +9,6 @@ Script principal otimizado para Windows PowerShell.
 
 ```bash
 # Publicar com incremento patch (2.2.1 → 2.2.2)
-npm run publish
 npm run publish:patch
 
 # Publicar com incremento minor (2.2.1 → 2.3.0)
