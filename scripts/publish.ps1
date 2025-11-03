@@ -30,11 +30,11 @@ function Invoke-SafeCommand {
         if ($LASTEXITCODE -ne 0) {
             throw "Command failed with exit code $LASTEXITCODE"
         }
-        Write-ColorOutput Green "✓ $Description completed successfully"
+        Write-ColorOutput Green "Success: $Description completed successfully"
     }
     catch {
-        Write-ColorOutput Red "✗ $Description failed"
-        Write-ColorOutput Red "Error: $($_.Exception.Message)"
+        Write-ColorOutput Red "Error: $Description failed"
+        Write-ColorOutput Red "Details: $($_.Exception.Message)"
         exit 1
     }
 }
@@ -48,7 +48,7 @@ function Get-PackageVersion {
 # Main execution
 $currentVersion = Get-PackageVersion
 
-Write-ColorOutput Magenta "🚀 Starting publication process..."
+Write-ColorOutput Magenta "Starting publication process..."
 Write-ColorOutput Cyan "Current version: $currentVersion"
 Write-ColorOutput Cyan "Version bump type: $VersionType"
 
@@ -70,5 +70,5 @@ Invoke-SafeCommand "npm publish" "Publishing to npm"
 # Step 5: Git push with tags
 Invoke-SafeCommand "git push --follow-tags" "Pushing to git with tags"
 
-Write-ColorOutput Green "`n🎉 Publication completed successfully!"
+Write-ColorOutput Green "Publication completed successfully!"
 Write-ColorOutput Cyan "Package @dspackages/highlight-text@$newVersion is now available on npm"

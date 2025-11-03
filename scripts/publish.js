@@ -50,7 +50,7 @@ function main() {
 
   const currentVersion = getPackageVersion();
   
-  log('🚀 Starting publication process...', 'magenta');
+  log('Starting publication process...', 'magenta');
   log(`Current version: ${currentVersion}`, 'cyan');
   log(`Version bump type: ${versionType}`, 'cyan');
 
@@ -72,7 +72,7 @@ function main() {
   // Step 5: Git push with tags
   execCommand('git push --follow-tags', 'Pushing to git with tags');
 
-  log('\n🎉 Publication completed successfully!', 'green');
+  log('\nPublication completed successfully!', 'green');
   log(`Package @dspackages/highlight-text@${newVersion} is now available on npm`, 'cyan');
 }
 
