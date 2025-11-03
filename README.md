@@ -238,7 +238,7 @@ The component works recursively:
 
 ## Use Cases
 
-### ✅ Ideal for:
+### Ideal for:
 - **Search results** - Highlight found terms
 - **Documentation** - Highlight keywords
 - **Tutorials** - Emphasize important concepts
@@ -280,26 +280,30 @@ npm start
 
 ## Testing
 
-The library includes a comprehensive test suite using **Vitest** and **@testing-library/react**.
+The library includes a comprehensive test suite using **Vites** and **@testing-library/react**.
 
 ### Test Structure
 
-Tests are organized in `src/__tests__/` with three main test files:
+Tests are organized in `src/__tests__/` and `src/utils/__tests__/` directories:
 
-- **`HighlightText.test.tsx`** - Core component functionality (18 tests)
-- **`utils.test.tsx`** - Internal functions and utilities (14 tests)  
-- **`accessibility.test.tsx`** - Accessibility and performance (15 tests)
+- **`src/__tests__/HighlightText.test.tsx`** - Core component functionality
+- **`src/__tests__/utils.test.tsx`** - Main utility integration tests 
+- **`src/utils/__tests__/textProcessor.test.tsx`** - Text processing utilities
+- **`src/utils/__tests__/reactProcessor.test.tsx`** - React element processing
+- **`src/utils/__tests__/propsComparator.test.tsx`** - Props comparison utilities
 
 ### Test Coverage
 
-**✅ 47 tests passing** covering:
+**76 tests passing** covering:
 
 - **Basic functionality** - Rendering, highlighting, multiple occurrences
 - **Case sensitivity** - Default insensitive, explicit sensitive mode
 - **Custom styling** - CSS classes, inline styles, CSS custom properties
 - **Regex patterns** - Special characters, complex patterns
 - **Edge cases** - Empty inputs, null/undefined, numbers, nested elements
-- **Accessibility** - Semantic markup, ARIA attributes, screen readers
+- **Text processing** - Escape regex, text parsing, highlight detection
+- **React processing** - Element traversal, DOM manipulation, children processing
+- **Props comparison** - Performance optimization, deep comparison
 - **Performance** - Large content, deep nesting, React.memo optimization
 - **Error handling** - Malformed regex, Unicode, special characters
 
@@ -347,7 +351,7 @@ MIT © Diego Silva
 
 ---
 
-### 🔗 Links
+### Links
 - [GitHub](https://github.com/Didilv93/highlight-text)
 - [npm](https://www.npmjs.com/package/@dspackages/highlight-text)
 - [Issues](https://github.com/Didilv93/highlight-text/issues)

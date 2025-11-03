@@ -1,6 +1,6 @@
 {
   "name": "@dspackages/highlight-text",
-  "version": "2.2.1",
+  "version": "2.1.1",
   "description": "A React component wrapper for highlighting text matches within any children content with customizable styling",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,11 +13,17 @@
   "scripts": {
     "build": "tsc --project tsconfig.cjs.json && npm run build:css",
     "build:css": "powershell -Command \"Copy-Item src/index.css dist/index.css\"",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run validate && npm run build",
+    "validate": "npm run test",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "publish:patch": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType patch",
+    "publish:minor": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType minor",
+    "publish:major": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType major",
+    "publish": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1",
+    "release": "npm run validate && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
