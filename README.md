@@ -260,10 +260,63 @@ npm install
 # Build library
 npm run build
 
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with UI
+npm run test:ui
+
+# Run tests with coverage
+npm run test:coverage
+
 # Run example
 cd example-app
 npm install
 npm start
+```
+
+## Testing
+
+The library includes a comprehensive test suite using **Vitest** and **@testing-library/react**.
+
+### Test Structure
+
+Tests are organized in `src/__tests__/` with three main test files:
+
+- **`HighlightText.test.tsx`** - Core component functionality (18 tests)
+- **`utils.test.tsx`** - Internal functions and utilities (14 tests)  
+- **`accessibility.test.tsx`** - Accessibility and performance (15 tests)
+
+### Test Coverage
+
+**✅ 47 tests passing** covering:
+
+- **Basic functionality** - Rendering, highlighting, multiple occurrences
+- **Case sensitivity** - Default insensitive, explicit sensitive mode
+- **Custom styling** - CSS classes, inline styles, CSS custom properties
+- **Regex patterns** - Special characters, complex patterns
+- **Edge cases** - Empty inputs, null/undefined, numbers, nested elements
+- **Accessibility** - Semantic markup, ARIA attributes, screen readers
+- **Performance** - Large content, deep nesting, React.memo optimization
+- **Error handling** - Malformed regex, Unicode, special characters
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Watch mode for development
+npm run test:watch
+
+# Visual test interface
+npm run test:ui
+
+# Generate coverage report
+npm run test:coverage
 ```
 
 ## Migration from v1.x
