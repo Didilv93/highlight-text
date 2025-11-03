@@ -67,7 +67,7 @@ function main() {
   log(`New version: ${newVersion}`, 'green');
 
   // Step 4: Publish to npm
-  execCommand('npm publish --no-scripts', 'Publishing to npm');
+  execCommand('npm publish --ignore-scripts', 'Publishing to npm');
 
   // Step 5: Git push with tags
   execCommand('git push --follow-tags', 'Pushing to git with tags');

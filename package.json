@@ -22,7 +22,6 @@
     "publish:patch": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType patch",
     "publish:minor": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType minor",
     "publish:major": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1 -VersionType major",
-    "publish": "powershell -ExecutionPolicy Bypass -File scripts/publish.ps1",
     "release": "npm run validate && npm run build && npm publish"
   },
   "repository": {

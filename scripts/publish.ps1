@@ -65,7 +65,7 @@ $newVersion = Get-PackageVersion
 Write-ColorOutput Green "New version: $newVersion"
 
 # Step 4: Publish to npm
-Invoke-SafeCommand "npm publish --no-scripts" "Publishing to npm"
+Invoke-SafeCommand "npm publish --ignore-scripts" "Publishing to npm"
 
 # Step 5: Git push with tags
 Invoke-SafeCommand "git push --follow-tags" "Pushing to git with tags"
